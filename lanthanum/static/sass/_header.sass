@@ -1,0 +1,57 @@
+/* Header styles */
+#header
+	width: 100%
+	height: 150px
+	background: #333
+	+box-shadow( 0 0 3px grey)
+	margin-bottom: 20px
+#branding
+	margin-left: 20px
+	height: 80px
+	padding: 20px 0
+	a:hover
+		text-decoration: none
+	.sitename
+		font-family: "Special Elite", monotype, sans
+		font-size: 76px
+		line-height: 76px
+		color: lightgrey !important
+
+#usertools
+	position: relative
+	float: right
+	padding: 10px
+		right: 20px
+	height 38px
+	top: -38px
+	background: transparentize(black, 0.3)
+	+border-radius( 10px 0 0 )
+
+#nav
+	height: 30px
+	width: 100%
+	margin: 0
+	padding: 0
+	border:
+		bottom: 1px solid transparentize(white, 0.5)
+		top: 1px solid transparentize(white, 0.5)
+	ul
+		display: table
+		border-top: 1px solid transparentize(black, 0.5)
+	li
+		display: table-cell
+		a
+			+inline-block
+			padding: 5px 20px
+			font-size: 20px
+			font-weight: bold
+			color: white !important
+			&:hover
+				text-decoration: none
+		border:
+			left: 1px solid transparentize(white, 0.3)
+			right: 1px solid transparentize(black, 0.3)
+		&:first-child
+			border-left: none
+		&:last-child
+			border-right: none
