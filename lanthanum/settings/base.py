@@ -147,6 +147,12 @@ if 'sentry' in INSTALLED_APPS:
 	SENTRY_KEY = 'magic8balls'
 
 
+if 'markitup' in INSTALLED_APPS:
+	
+	MARKITUP_FILTER = ('markdown.markdown', {
+										'safe_mode': True
+						})
+
 INTERNAL_IPS = ('127.0.0.1',)
 if 'debug_toolbar' in INSTALLED_APPS:
 	DEBUG_TOOLBAR_CONFIG = {

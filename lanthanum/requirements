@@ -14,6 +14,7 @@ south # migrations support
 sorl-thumbnail # Fantastic thumbnailing library
 django-annoying # takes the annoying parts out of django
 django-boss # fixes django's retarded optparse reliance
+django-markitup # adds extra markup support.
 #git+https://github.com/twoolie/django-bootstrap.git@patch-1#egg=django-bootstrap
 django-haystack # Advanced Full-text search
 #django-admin-tools
