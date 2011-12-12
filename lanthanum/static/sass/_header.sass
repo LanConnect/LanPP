@@ -1,57 +1,53 @@
 /* Header styles */
 #header
 	width: 100%
-	height: 150px
-	background: #333
-	+box-shadow( 0 0 3px grey)
-	margin-bottom: 20px
+	height: 100px
+	
 #branding
-	margin-left: 20px
-	height: 80px
+	+inline-block
 	padding: 20px 0
-	a:hover
+	a
 		text-decoration: none
 	.sitename
 		font-family: "Special Elite", monotype, sans
 		font-size: 76px
 		line-height: 76px
 		color: lightgrey !important
+	+text-shadow(0 3px 7px green)
 
 #usertools
-	position: relative
+	+inline-block
 	float: right
 	padding: 10px
 		right: 20px
-	height 38px
-	top: -38px
-	background: transparentize(black, 0.3)
-	+border-radius( 10px 0 0 )
-
-#nav
-	height: 30px
-	width: 100%
-	margin: 0
-	padding: 0
 	border:
-		bottom: 1px solid transparentize(white, 0.5)
-		top: 1px solid transparentize(white, 0.5)
-	ul
-		display: table
-		border-top: 1px solid transparentize(black, 0.5)
-	li
+		top: 1px solid #555
+		bottom: 1px solid black
+	margin: 30px 0
+	background: transparentize(black, 0.3)
+	+border-radius( 10px )
+
+/* NAV STYLES */
+#nav
+	display: table
+	width: 100%
+
+	a
 		display: table-cell
-		a
-			+inline-block
-			padding: 5px 20px
-			font-size: 20px
-			font-weight: bold
-			color: white !important
-			&:hover
-				text-decoration: none
-		border:
-			left: 1px solid transparentize(white, 0.3)
+		padding: 10px 20px
+		font-size: 16px
+		font-weight: bold
+		text-decoration: none
+		text-align: center
+		color: white !important
+		+background-image(linear-gradient(top, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 17%, rgba(44,44,44,1) 32%, rgba(0,0,0,1) 33%, rgba(43,43,43,1) 92%, rgba(105,255,63,1) 92%, rgba(73,255,17,1) 94%, rgba(76,201,14,1) 97%))
+		&:hover
+			text-decoration: none
+			+background-image(linear-gradient(top, rgba(76,76,76,1) 0%,rgba(102,102,102,1) 17%,rgba(63,63,63,1) 32%,rgba(53,53,53,1) 33%,rgba(43,43,43,1) 92%,rgba(105,255,63,1) 92%,rgba(73,255,17,1) 94%))
+		border: 1px solid transparentize(#AAA, 0.3)
 			right: 1px solid transparentize(black, 0.3)
 		&:first-child
-			border-left: none
+			+border-radius( 20px 0 0 0 )
 		&:last-child
-			border-right: none
+			+border-radius( 0 20px 0 0 )
+			border-right: 1px solid transparentize(#AAA, 0.3)

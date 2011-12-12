@@ -4,23 +4,26 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>{% block title %}{% endblock %} | {{settings.SITE_NAME}}</title>
 		<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.png">
-		<link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.min.css" media="screen, projection" type="text/css" />
+		<!-- link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.min.css" media="screen, projection" type="text/css" /-->
 		<link rel="stylesheet" href="{{STATIC_URL}}css/base.css" media="screen, projection" type="text/css" />
 		<!--[if IE]><link href="{{STATIC_URL}}css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" /><![endif]-->
+		<!--[if gte IE 9]><style type="text/css">/* GRADIENT HAX */ .gradient * {filter: none;}</style><![endif]-->
 		{% block extracss %}{% endblock %}
 		<script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script>
 		<script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-modal.js"></script>
 		<script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-twipsy.js"></script>
 		<script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-popover.js"></script>
 		{% block extrajs %}{% endblock %}
+		
 	</head>
 	<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">{% block body %}
 		<div id="header">
 			<div id="branding">
 				<a href="/"><span class='sitename'>{{settings.SITE_NAME}}</span></a>
 			</div>
+			{% if request.user.is_authenticated %}{# remove this for production #}
 			<div id="usertools">
-				{% if request.user.is_authenticated %}
+					{% if request.user.is_authenticated %}
 					{#{% include "profile/avatar.html" with user=request.user size="small" %}#}
 					<a href="{# url profile:profile #}" class="username">{{ request.user.username }}</a> |
 					{#<a href="{% url messages_inbox %}" class="messgaes unread">{% inbox_count %} Unread</a>#}
@@ -30,13 +33,12 @@
 					<a href="{% url login %}">login</a>
 				{% endif %}
 			</div>
-			<div id="nav">
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/about/">About</a></li>
-					<li><a href="/booking/">Upcoming Lan</a></li>
-				</ul>
-			</div>
+			{% endif %}
+		</div>
+		<div id="nav" class="gradient">
+			<a href="/">Home</a>
+			<a href="/about/">About</a>
+			<a href="/booking/">Upcoming Lan</a>
 		</div>
 		<div id="page">{% block page %}
 			<div id="sidebar">{% block sidebar %}{% endblock %}</div>

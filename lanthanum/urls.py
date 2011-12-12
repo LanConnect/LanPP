@@ -39,7 +39,7 @@ if 'LanConnect.tournaments' in settings.INSTALLED_APPS:
 if 'LanConnect.jquery' in settings.INSTALLED_APPS:
     urlpatterns += [ url(r'^jquery/', include('LanConnect.jquery.urls', namespace = 'jquery')), ]
 
-if settings.DEBUG:
+if settings.SERVE_MEDIA:
     urlpatterns += [
         url(r'^'+settings.MEDIA_URL[1:]+r'(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT} ),
     ]

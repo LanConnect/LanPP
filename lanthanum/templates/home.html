@@ -6,21 +6,24 @@
 
 {% block content %} {{ flatpage.content|render_markup|safe }} {% endblock content %}
 {% block sidebar %}
-<h4> Latest Forum Posts </h2>
-<ul>
-	<li><a href=#> Forum Post 1 </a></li>
-	<li><a href=#> Forum Post 2 </a></li>
-	<li><a href=#> Forum Post 3 </a></li>
-	<li><a href=#> Forum Post 4 </a></li>
-	<li><a href=#> Forum Post 5 </a></li>
-</ul>
-
-<h4> Latest Tournament Scores </h2>
-<ul>
-	<li><a href=#> Match 1 </a></li>
-	<li><a href=#> Match 2 </a></li>
-	<li><a href=#> Match 3 </a></li>
-	<li><a href=#> Match 4 </a></li>
-	<li><a href=#> Match 5 </a></li>
-</ul>
+<div class="sidebar-item">
+	<h4> Latest Forum Posts </h2>
+	<ul>
+		<li><a href=#> Forum Post 1 </a></li>
+		<li><a href=#> Forum Post 2 </a></li>
+		<li><a href=#> Forum Post 3 </a></li>
+		<li><a href=#> Forum Post 4 </a></li>
+		<li><a href=#> Forum Post 5 </a></li>
+	</ul>
+</div>
+<div class="sidebar-item">
+	<h4> Latest Tournament Scores </h2>
+	<ul>
+		<li><a href=#> Match 1 </a></li>
+		<li><a href=#> Match 2 </a></li>
+		<li><a href=#> Match 3 </a></li>
+		<li><a href=#> Match 4 </a></li>
+		<li><a href=#> Match 5 </a></li>
+	</ul>
+</div>
 {% endblock %}

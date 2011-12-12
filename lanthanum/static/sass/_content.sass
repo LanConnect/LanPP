@@ -1,9 +1,11 @@
 /* content */
-#page, #footer
-	min-width: 960px
-	max-width: 1300px
-	margin: 0 auto
-	padding: 0 20px
+
+#page
+	background: transparentize(#222, 0.4)
+	padding: 20px
+	border: 1px solid #222
+	box-shadow: 0 0 1px black
+	+border-radius( 0 0 10px 10px )
 
 #content
 	margin-right: $sidebar-width + 10px
@@ -12,5 +14,10 @@
 	float: right
 	width: $sidebar-width
 	height: 100%
-	padding-left: 10px
-	border-left: 1px dashed grey
+	
+	h3, h4, h5
+		margin: 0
+		padding: 8px
+		width: 100%
+		+border-radius(8px 8px 0 0)
+		+box-shadow( 0 1px 1px grey inset )

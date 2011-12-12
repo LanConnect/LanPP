@@ -5,13 +5,26 @@
 @import url("http://fonts.googleapis.com/css?family=Special+Elite|Sansita+One")
 
 /* BASE STYLES */
+
+html
+	background: #111 url('#{$static_url}img/bg.png') top center repeat-x
+body
+	color: #EEE
+	font-family: sans-serif
+	min-width: 960px
+	max-width: 1300px
+	margin: 0 auto
+	padding: 0 20px
+
 a
-	+link-colors($primary-color, adjust-hue($primary-color, -10), #c0c, #ccc, #cc0)
+	+link-colors($primary-color, lighten($primary-color, 10%))
+	text-decoration: none
+	&:hover, &:focus
+		text-decoration: underline
+/*h1, h2
+	* margin-top: 0px
 
 @import "header"
 @import "content"
 
 /* footer */
-#footer
-	margin-top: 30px
-	border-top: 1px solid grey
