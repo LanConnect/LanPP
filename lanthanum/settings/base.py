@@ -1,5 +1,5 @@
 # Django settings for AvconTournaments project.
-import sys, pinax
+import sys
 from os.path import abspath, join, dirname
 
 PROJECT_ROOT = join(abspath(dirname(__file__)),'..'); sys.path.append(PROJECT_ROOT)
