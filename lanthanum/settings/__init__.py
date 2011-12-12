@@ -8,7 +8,6 @@ else:
 
 #try to grab host specific configs
 try:
-    host_settings = __import__(platform.node().split(".")[0].lower())
-    locals().update(host_settings.__dict__)
+    exec 'from %s import *' % (platform.node().split(".")[0].lower())
 except ImportError:
     pass
