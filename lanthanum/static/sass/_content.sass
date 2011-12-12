@@ -14,10 +14,19 @@
 	float: right
 	width: $sidebar-width
 	height: 100%
-	
-	h3, h4, h5
-		margin: 0
-		padding: 8px
-		width: 100%
-		+border-radius(8px 8px 0 0)
-		+box-shadow( 0 1px 1px grey inset )
+	.sidebar-item
+		margin-top: 10px
+		$bord-rad: 8px
+		+border-radius($bord-rad)
+		+box-shadow(0 0 1px black)
+		h3, h4, h5
+			margin: 0
+			padding: 8px
+			background: rgba(50, 50, 50, 0.3)
+			+border-radius($bord-rad $bord-rad 0 0)
+			+box-shadow(0 1px 1px grey inset)
+		ul
+			padding: 10px 10px 10px 25px
+			margin: 0
+			background: rgba(10, 10, 10, 0.3)
+			+border-radius(0 0 $bord-rad $bord-rad)
