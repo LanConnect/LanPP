@@ -2,6 +2,13 @@
 import sys
 from os.path import abspath, join, dirname
 
+
+#This determines wether the server is dev or not, and allows some automatic setting of things like DEBUG settings. Valid options are DEV TEST and PRD
+#DEV = development machine
+#PRD = Production - user facing server, debug turned off.
+#TEST = Like for like to PRD, with debug on, to allow testing of datamigrations etc.
+SERVER_CLASS = "DEV"
+
 PROJECT_ROOT = join(abspath(dirname(__file__)),'..'); sys.path.append(PROJECT_ROOT)
 
 SITE_NAME = 'Lan++'
