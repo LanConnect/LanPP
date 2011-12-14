@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{request.LANGUAGE_CODE}}">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Err#500 | {{settings.SITE_NAME}}</title>
+    <style>
+      @import url("http://fonts.googleapis.com/css?family=Leckerli+One");
+      @import url("http://fonts.googleapis.com/css?family=Sansita+One");
+      html { background: url("{{STATIC_URL}}img/bg_middle.png") repeat scroll; }
+      .error500 { width:570px; height:570px; text-align: center; border-radius: 10px; 
+                      background: url("{{STATIC_URL}}img/waves.png") repeat-x bottom, rgba(0,0,0,0.4); margin: 50px auto; color: white;
+                      box-shadow: 3px 3px 5px rgba(0,0,0,0.5) inset, -3px -3px 5px rgba(255,255,255,0.5) inset;}
+      .error500 h1 { font-size: 36px; font-family: 'Leckerli One', cursive, sans; padding-top:20px;}
+      .error500 h2, p { font-family: 'Sansita One', cursive, sans; }
+      .error500 p { font-size: 16px; }
+      .error500 p.reference { font-size:10px; color: lightgrey }
+      .error500 a, .error500 a:hover, .error500 a:active 
+      { color: white; background: rgba(0,0,0,0.7); border-radius: 4px; padding:3px 5px; text-decoration: none; }
+      .error500 a:hover { color:#FA7D16; background:rgba(0,0,0,0.4); box-shadow: 1px 1px 3px rgba(0,0,0,0.5) inset;}
+    </style>
+  </head>
+  <body class="error500">
+    <h1> FAIL NARWHALE! <h2>
+    <img src="{{STATIC_URL}}img/fail_narwhal.png" />
+    <h2> Uh oh... Something went very wrong. </h2>
+    <p> Where do we go from here? </p>
+    <p><a href="/">&laquo; Home</a>
+       <a href="javascript:history.back()"> &lsaquo; Back</a>
+       <a href="javascript:location.reload(true)">↻ Refresh</a><p>
+    {% if request.sentry.id %}<p class="reference"> ref.# {{request.sentry.id}} </p>{% endif %}
+  </body>
+</html>
